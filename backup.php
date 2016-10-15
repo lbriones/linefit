@@ -32,7 +32,7 @@
 
 <?php
 
-$_GET['guidMail'] = '967423ed-a9dc-4005-942d-6c4411dc27ef';
+//$_GET['guidMail'] = '967423ed-a9dc-4005-942d-6c4411dc27ef';
 
 $guidMail = $_GET['guidMail'];
 
@@ -43,7 +43,7 @@ $array1 = array(
 ", 
     "acd8fabb-bd98-4da5-b1aa-1d4bc15f890d" => "img\yoga\Banner.jpg;img\yoga\Lugar1.png;img\yoga\Lugar2.png;img\yoga\Lugar3.png;http://www.yogamandiram.cl/;http://www.yogayi.cl/web2/;http://www.academiachilenadeyoga.cl/;yoga;omega3;mesomorfo;acd8fabb-bd98-4da5-b1aa-1d4bc15f890d
 ",
-	"e3280f45-774a-455c-a87f-d2d18deac151" => "img/Karate/Banner.jpg;img/Karate/Lugar1.png;img/Karate/Lugar2.png;img/Karate/Lugar3.png;http://www.nihonkaratedo.cl/;http://www.santiagobudokan.cl/clases/karate-shorin-ryu/;http://www.karategojuryu.cl/;Karate;frutossecos;mesomorfo;e3280f45-774a-455c-a87f-d2d18deac151
+	"e3280f45-774a-455c-a87f-d2d18deac151" => "img/karate/Banner.jpg;img/karate/Lugar1.png;img/karate/Lugar2.png;img/karate/Lugar3.png;http://www.nihonkaratedo.cl/;http://www.santiagobudokan.cl/clases/karate-shorin-ryu/;http://www.karategojuryu.cl/;Karate;frutossecos;mesomorfo;e3280f45-774a-455c-a87f-d2d18deac151
 ", 
     "1059aa70-4d41-48c0-bdaf-90aaabf2f300" => "img/natacion/Banner.jpg;img/natacion/Lugar1.png;img/natacion/Lugar2.png;img/natacion/Lugar3.png;http://www.centrodeportivoprovidencia.cl;http://www.centrodenatacion.cl/;http://www.spaprovidencia.cl;natacion;creatina;ectomorfo;1059aa70-4d41-48c0-bdaf-90aaabf2f300
 ",

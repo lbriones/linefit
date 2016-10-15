@@ -2,48 +2,11 @@
 
 
 header('Content-Type: text/plain;charset=UTF-8');	
-
-
-
-//print_r($arrayData);
-  $json=file_get_contents("http://200.55.216.115:8281/hack/paciente");
-            $data =  json_decode($json);
-            
-           //print_r($data);
-            if (count($data->Entries)) {
-
-			
-                foreach ($data->Entries as $idx => $results) {
-                // div productos
-              //  echo '<div class="col-md-4 col-sm-4 hero-feature">';
-
-				//echo count($results);
-				
-				//echo $results[$i]->rut;
-				//echo "hola!!!".count($results);
-				
-					for ($i=0;$i<=count($results);$i++){
-						
-					//	echo $results[$i]->mail;
-						
-					//	echo $results[$i]->GUID;
-						
-						sendMail($results[$i]->mail, $results[$i]->GUID);
-		
-						
-					}
-				
-				
-                // cerrar div de productos
-              //  echo "</div>";
-				
-                }
-            }
-
-
-//echo "hola ".$arrayData[0];
-
 /*
+$jsonData = "[{correo:prodriguez1811@gmail.cl},{correo:lbriones.tic@gmail.com}]";
+
+
+
             //$json=file_get_contents($jsonData); 
 			//$data= json_encode($jsonData);
 			
@@ -74,9 +37,7 @@ for(i=0;i<=jsonData.lenght();i++){
 }
 */
 
-function sendMail($varmail, $varguid){
-	
-$MailToAddress = $varmail;
+$MailToAddress = "lbriones.tic@gmail.com,prodriguez1811@gmail.com,";
 $MailFromAddress = "hola@neursoft.com";
 $MailSubject = "Tu plan de salud ha llegado! ".$_POST['subject'];
     if (!$MailFromAddress) {
@@ -93,8 +54,20 @@ $Footer = "";
 
 //$entrada = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
 
+$GUID =array('acd8fabb-bd98-4da5-b1aa-1d4bc15f890d','7f07765b-d0ef-42e3-898d-0cd1c1e2aa61');
 
-		$link= "http://www.neursoft.com/linefit/backup.php?guidMail=".$varguid;
+$claves_aleatorias = array_rand($GUID, 2);
+//echo $GUID[$claves_aleatorias[0]] . "\n";
+//echo $GUID[$claves_aleatorias[1]] . "\n";
+
+
+
+
+    /*foreach ($_POST as $key => $value){
+        $Message .= "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+    }*/
+
+		$link= "http://www.neursoft.com/linefit/backup.php?guidMail=".$GUID[$claves_aleatorias[0]];
 		
 		
 	$Message .= "<div>";
@@ -118,10 +91,9 @@ $Footer = "";
 
 
 
+//mail( "$MailFromAddress, lbriones@neursoft.com", "$MailSubject", "$Message", "From: $MailToAddress");
+mail( "$MailToAddress", "$MailSubject", "$Message",$Header );
 
-
-	mail( "$MailToAddress", "$MailSubject", "$Message",$Header );
-}
 
 header ("Location: index.php");
 ?>
